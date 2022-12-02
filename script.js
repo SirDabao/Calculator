@@ -97,6 +97,30 @@ calcBtns.forEach(button=>{
 });
 
 $(document).keydown(function(e) {
+    if(e.shiftKey)
+    switch (e.which)
+    {
+        case 54: document.getElementById(`pow`).click(); break;
+        case 56: document.getElementById(`mul`).click(); break;
+        case 187: document.getElementById(`add`).click();
+    }
+    else{
 if(e.which>47 && e.which<58)
-document.getElementById(`${e.which-48}`).click(); 
+document.getElementById(`${e.which-48}`).click();
+else switch(e.which)
+{
+    case 8: document.getElementById(`del`).click(); break;
+    case 13: document.getElementById(`eq`).click(); break;
+    case 37: document.getElementById(`current`).click(); break;
+    case 38: document.getElementById(`inc`).click(); break;
+    case 39:document.getElementById(`max`).click(); break;
+    case 40: document.getElementById(`dec`).click(); break;
+    case 46:  document.getElementById(`clr`).click(); break;
+    case 187: document.getElementById(`eq`).click(); break;
+    case 189: document.getElementById(`sub`).click(); break;
+    case 190: document.getElementById(`dot`).click(); break;
+    case 191: document.getElementById(`div`).click(); break;
+    case 192: document.getElementById(`sign`).click();
+} 
+    }
 });
