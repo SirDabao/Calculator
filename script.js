@@ -96,3 +96,7 @@ calcBtns.forEach(button=>{
    button.addEventListener("click",()=>populate(button))
 });
 
+$(document).keydown(function(e) {
+if(e.which>47 && e.which<58)
+document.getElementById(`${e.which-48}`).click(); 
+});

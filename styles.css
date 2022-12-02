@@ -31,6 +31,7 @@ background-color: rgb(46, 43, 43);
     border:2px solid black;
     background-color:rgb(61, 191, 130);
     flex:1 1 auto;
+    margin-bottom: 2%;
 }
 .buttons{
     display: flex;
@@ -38,7 +39,7 @@ background-color: rgb(46, 43, 43);
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
-    margin: 5px;
+    margin: 1%;
     min-height: 200px;
 }
 .row{
@@ -51,7 +52,7 @@ background-color: rgb(46, 43, 43);
 }
 .buttons button{
     padding:10px;
-    margin:40px;
+    margin:2.5%;
     width: 200px;
     height:80px;
 }
@@ -75,12 +76,13 @@ button{
 .dec{
     background-color: rgb(150, 200, 200);
 }
-.eq,.del,.clear{
+.special{
     background-color: rgb(130, 5, 5);
 }
 .on{
     background-color: black;
     color: white;
     font-weight: bold;
+    border: 1px solid darkblue;
 }
 
