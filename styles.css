@@ -75,4 +75,12 @@ button{
 .dec{
     background-color: rgb(150, 200, 200);
 }
+.eq,.del,.clear{
+    background-color: rgb(130, 5, 5);
+}
+.on{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
 
