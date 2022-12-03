@@ -16,6 +16,7 @@ background-color: rgb(46, 43, 43);
     font-style: italic;
     align-self: center;
     font-size: 450%;
+    display: flex;
 }
 .custom{
     display: flex;
@@ -96,5 +97,11 @@ button{
     background-color: rgb(120, 78, 0);
     border: 2px solid white;
     font-weight: bold;
+}
+.mod{
+    width: 100%;
+    justify-content: center;
+    margin: 1%;
+    gap: 3%;
 }
 

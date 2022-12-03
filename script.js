@@ -3,6 +3,7 @@ let arg=0; // the argument before pressing an operation button
 let oper=false; // is an operation button currently pressed
 let lastOper=""; // the operator most recently pressed
 let currOpRef="";
+let modify=true;
 let add=(a,b)=>+(a+b).toFixed(fix);
 let sub=(a,b)=>+(a-b).toFixed(fix);
 let mult=(a,b)=>+(a*b).toFixed(fix);
@@ -50,7 +51,7 @@ function populate(btn)
     {
         switch(btn.textContent)
         {
-            case "=": disp.textContent=operate(lastOper,arg,+disp.textContent);lastOper="=" ;oper=true; break;
+            case "=": disp.textContent=operate(lastOper,arg,+disp.textContent);lastOper="=" ;oper=!modify; break;
             case "DEL": disp.textContent.length===1? disp.textContent="0":disp.textContent=disp.textContent.substring(0,disp.textContent.length-1); break;
             case "AC": disp.textContent="0"; arg=0; oper=false; lastOper="AC";
         }
@@ -135,4 +136,9 @@ else switch(e.which)
     case 192: document.getElementById(`sign`).click();
 } 
     }
+});
+modBtn=document.querySelector(".modify");
+modBtn.addEventListener("click",()=>{modBtn.classList.toggle("on");
+ modify=!modify
+ modify? modBtn.textContent="on": modBtn.textContent="off";
 });
