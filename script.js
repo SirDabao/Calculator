@@ -2,6 +2,7 @@ const MAX=15;
 let arg=0; // the argument before pressing an operation button
 let oper=false; // is an operation button currently pressed
 let lastOper=""; // the operator most recently pressed
+let currOpRef="";
 let add=(a,b)=>+(a+b).toFixed(fix);
 let sub=(a,b)=>+(a-b).toFixed(fix);
 let mult=(a,b)=>+(a*b).toFixed(fix);
@@ -27,6 +28,8 @@ function populate(btn)
     switch (btn.textContent)
     {
    case ".": 
+   if(oper)
+   disp.textContent=0;
    disp.textContent.includes(".")? null:disp.textContent=disp.textContent+"."; break;
    case "+/-": disp.textContent=-(+disp.textContent); break;
    case "0": oper?disp.textContent=btn.textContent:(disp.textContent==="0"?null:
@@ -47,9 +50,9 @@ function populate(btn)
     {
         switch(btn.textContent)
         {
-            case "=": disp.textContent=operate(lastOper,arg,+disp.textContent);lastOper="" ;oper=true; break;
+            case "=": disp.textContent=operate(lastOper,arg,+disp.textContent);lastOper="=" ;oper=true; break;
             case "DEL": disp.textContent.length===1? disp.textContent="0":disp.textContent=disp.textContent.substring(0,disp.textContent.length-1); break;
-            case "AC": disp.textContent="0"; arg=0; oper=false; lastOper=""; 
+            case "AC": disp.textContent="0"; arg=0; oper=false; lastOper="AC";
         }
     }
 
@@ -93,7 +96,16 @@ minusFix.addEventListener("click",()=>{
 })
 calcBtns=document.querySelectorAll(".buttons button");
 calcBtns.forEach(button=>{
-   button.addEventListener("click",()=>populate(button))
+   button.addEventListener("click",()=>{populate(button); if(button.textContent===lastOper)
+{
+    currOpRef===""? null: currOpRef.classList.remove("op-on");
+    if(button.classList.contains("op"))
+    {
+    button.classList.add("op-on");
+    currOpRef=button;
+    }
+}
+})
 });
 
 $(document).keydown(function(e) {

@@ -91,4 +91,10 @@ button{
     font-weight: bold;
     border: 1px solid darkblue;
 }
+.op-on{
+    color: rgb(243, 184, 75);
+    background-color: rgb(120, 78, 0);
+    border: 2px solid white;
+    font-weight: bold;
+}
 
